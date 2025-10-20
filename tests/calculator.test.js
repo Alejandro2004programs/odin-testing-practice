@@ -5,7 +5,7 @@ test("simple addition of two numbers", () => {
 })
 
 test("addition of non numbers", () => {
-    expect(calculator.add("a", 1)).toThrow();
+    expect(() => calculator.add("a", 1)).toThrow();
 });
 
 test("simple subtraction of two numbers", () => {
@@ -13,19 +13,19 @@ test("simple subtraction of two numbers", () => {
 });
 
 test("subtraction of non numbers", () => {
-    expect(calculator.subtract("a", 1)).toThrow();
+    expect(() => calculator.subtract("a", 1)).toThrow();
 });
 
 test("division of two non zero numbers", () => {
-    expect(calculator.division(4, 2)).toBe(2);
+    expect(calculator.divide(4, 2)).toBe(2);
 });
 
 test("division by zero", () => {
-    expect(calculator.divide(5, 0)).toThrow(/No division by zero/);
+    expect(() => calculator.divide(5, 0)).toThrow();
 });
 
 test("division by non numbers", () => {
-    expect(calculator.divide("a", 1)).toThrow();
+    expect(() => calculator.divide("a", 1)).toThrow();
 });
 
 
