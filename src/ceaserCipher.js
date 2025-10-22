@@ -15,6 +15,24 @@ export default function ceaserCipher(string, number) {
                 returnString = returnString + newChar;
             }
         }
+        else if(ASCII >= 65 && ASCII <= 90) {
+            if(ASCII + offset > 90) {
+                let newASCII = ASCII - 26 + offset;
+                let newChar = String.fromCharCode(newASCII);
+                returnString = returnString + newChar;
+            }
+            else {
+                let newASCII = ASCII + offset;
+                let newChar = String.fromCharCode(newASCII);
+                returnString = returnString + newChar;
+            }
+        }
+        else {
+            returnString = returnString + string[i];
+        }
     }
     return returnString;
 }
+
+// Note for later: look into breaking up the function into a smaller one
+// because it will get into a lot of lines
